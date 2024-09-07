@@ -9,14 +9,14 @@ func intersection(a, b []int) []int {
 	var result []int
 
 	for _, value := range a {
-		if _, err := frequency[value]; !err {
+		if _, val := frequency[value]; !val {
 			frequency[value] = 1
 		} else {
 			frequency[value] += 1
 		}
 	}
 	for _, value := range b {
-		if count, err := frequency[value]; err && count > 0 {
+		if count, val := frequency[value]; val && count > 0 {
 			frequency[value] -= 1
 			result = append(result, value)
 		}
